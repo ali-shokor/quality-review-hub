@@ -1,0 +1,37 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+
+{% block title %}Login | Quality Review Hub{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center" style="min-height: 72vh;">
+  <div class="col-lg-5 col-md-7">
+    <div class="card p-4 p-md-5">
+      <div class="mb-4 text-center">
+        <h1 class="page-title mb-2">Quality Review Hub</h1>
+        <p class="page-subtitle mb-0">Sign in to manage projects, submissions, and reviews.</p>
+      </div>
+
+      <form id="loginForm">
+        <div class="mb-3">
+          <label class="form-label">Username</label>
+          <input class="form-control form-control-lg" type="text" id="username" placeholder="Enter username">
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Password</label>
+          <input class="form-control form-control-lg" type="password" id="password" placeholder="Enter password">
+        </div>
+
+        <button class="btn btn-primary btn-lg w-100 fw-semibold" type="submit">Login</button>
+      </form>
+
+      <div id="loginError" class="text-danger mt-3 small"></div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'frontend/js/auth.js' %}"></script>
+{% endblock %}

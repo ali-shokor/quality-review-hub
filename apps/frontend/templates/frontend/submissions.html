@@ -1,0 +1,22 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+
+{% block title %}Submissions | Quality Review Hub{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+  <h1 class="page-title">Submissions</h1>
+  <p class="page-subtitle">Track all submitted work and review status</p>
+</div>
+
+<div class="card p-3 mb-3">
+  <h4 class="mb-0">All Submissions</h4>
+</div>
+
+<div id="submissionsContainer" class="row g-3"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'frontend/js/api.js' %}"></script>
+<script src="{% static 'frontend/js/submissions.js' %}"></script>
+{% endblock %}

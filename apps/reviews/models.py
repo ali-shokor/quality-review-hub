@@ -1,3 +1,5 @@
+# Database models for the reviews app, including Project, Submission, Criterion, and Review.
+
 from django.db import models
 from django.contrib.auth.models import User
 
@@ -27,7 +29,16 @@ class Submission(models.Model):
 
     def __str__(self):
         return self.title
+    
+    def average_score(self):
+        reviews = self.reviews.all()
 
+        if not reviews.exists():
+            return 0
+
+        total = sum(review.score for review in reviews)
+
+        return total / reviews.count()
 
 class Criterion(models.Model):
     project = models.ForeignKey(Project, on_delete=models.CASCADE, related_name='criteria')

@@ -30,13 +30,15 @@ ALLOWED_HOSTS = []
 from datetime import timedelta
 
 REST_FRAMEWORK = {
-    'DEFAULT_AUTHENTICATION_CLASSES': (
+    'DEFAULT_AUTHENTICATION_CLASSES': ( # Here for each request, we check if the user is authenticated using JWT tokens
         'rest_framework_simplejwt.authentication.JWTAuthentication',
     ),
+    
+    'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
 }
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [ # Here we register our apps and the third party apps we are using
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -46,6 +48,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'apps.accounts',
     'apps.reviews',
+    'drf_spectacular',
+    'apps.frontend',
 ]
 
 MIDDLEWARE = [

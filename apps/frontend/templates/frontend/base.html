@@ -1,0 +1,56 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+
+{% block title %}Dashboard | Quality Review Hub{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+  <h1 class="page-title">Dashboard</h1>
+  <p class="page-subtitle mb-0">Overview of your review workflow.</p>
+</div>
+
+<div class="row g-3 mb-4">
+  <div class="col-md-3">
+    <div class="card stat-card p-4">
+      <div class="stat-label">Projects</div>
+      <h2 id="projectsCount">0</h2>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card stat-card p-4">
+      <div class="stat-label">Submissions</div>
+      <h2 id="submissionsCount">0</h2>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card stat-card p-4">
+      <div class="stat-label">Reviews</div>
+      <h2 id="reviewsCount">0</h2>
+    </div>
+  </div>
+
+  <div class="col-md-3">
+    <div class="card stat-card p-4">
+      <div class="stat-label">Pending Submissions</div>
+      <h2 id="pendingCount">0</h2>
+    </div>
+  </div>
+</div>
+
+<div class="card p-4">
+  <div class="d-flex justify-content-between align-items-center mb-3">
+    <h4 class="mb-0">Recent Projects</h4>
+    <a class="btn btn-outline-light btn-sm" href="/projects/">Open Projects</a>
+  </div>
+
+  <div id="projectsList" class="list-group list-group-flush"></div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'frontend/js/auth.js' %}"></script>
+<script src="{% static 'frontend/js/api.js' %}"></script>
+<script src="{% static 'frontend/js/dashboard.js' %}"></script>
+{% endblock %}

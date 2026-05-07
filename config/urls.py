@@ -20,14 +20,24 @@ from rest_framework_simplejwt.views import (
     TokenObtainPairView,
     TokenRefreshView,
 )
+from drf_spectacular.views import (
+    SpectacularAPIView,
+    SpectacularSwaggerView,
+)
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
 
-    # 🔐 AUTH
+    # JWT
     path('api/token/', TokenObtainPairView.as_view()),
     path('api/token/refresh/', TokenRefreshView.as_view()),
 
-    # 📡 API
+    # Swagger
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/docs/', SpectacularSwaggerView.as_view(url_name='schema')),
+
+    # API
     path('api/', include('apps.reviews.urls')),
+    path('', include('apps.frontend.urls')),
 ]

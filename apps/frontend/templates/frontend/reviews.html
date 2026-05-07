@@ -1,0 +1,22 @@
+{% extends 'frontend/base.html' %}
+{% load static %}
+
+{% block title %}Reviews | Quality Review Hub{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+  <h1 class="page-title">Reviews</h1>
+  <p class="page-subtitle">Scoring and feedback system</p>
+</div>
+
+<div class="card p-3 mb-3">
+  <h4 class="mb-0">All Reviews</h4>
+</div>
+
+<div id="reviewsContainer" class="row g-3"></div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'frontend/js/api.js' %}"></script>
+<script src="{% static 'frontend/js/reviews.js' %}"></script>
+{% endblock %}
