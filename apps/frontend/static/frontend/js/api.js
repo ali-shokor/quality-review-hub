@@ -1,36 +1,24 @@
-function getAccessToken() {
-  return localStorage.getItem("access_token");
-}
+const BASE_URL = "";
 
 async function apiFetch(url, options = {}) {
-  const token = getAccessToken();
+
+  const token = localStorage.getItem("access_token");
 
   const headers = {
     "Content-Type": "application/json",
-    ...(options.headers || {}),
   };
 
   if (token) {
     headers["Authorization"] = `Bearer ${token}`;
   }
 
-  const response = await fetch(url, {
+  const res = await fetch(BASE_URL + url, {
     ...options,
-    headers,
+    headers: {
+      ...headers,
+      ...options.headers,
+    },
   });
 
-  if (response.status === 401) {
-    localStorage.removeItem("access_token");
-    localStorage.removeItem("refresh_token");
-    localStorage.removeItem("access");
-    localStorage.removeItem("refresh");
-
-    if (window.location.pathname !== "/") {
-      window.location.href = "/";
-    }
-
-    return null;
-  }
-
-  return response;
+  return res;
 }

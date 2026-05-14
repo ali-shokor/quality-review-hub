@@ -3,6 +3,7 @@ from django.shortcuts import render
 def login_page(request):
     return render(request, 'frontend/login.html')
 
+
 def dashboard_page(request):
     return render(request, 'frontend/dashboard.html')
 
@@ -14,3 +15,6 @@ def submissions_page(request):
 
 def reviews_page(request):
     return render(request, 'frontend/reviews.html')
+
+def criteria_page(request):
+    return render(request, 'frontend/criteria.html')
