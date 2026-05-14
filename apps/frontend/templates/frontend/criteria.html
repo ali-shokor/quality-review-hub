@@ -1,11 +1,25 @@
 {% extends 'frontend/base.html' %}
+{% load static %}
+
+{% block title %}Evaluation Criteria | Quality Review Hub{% endblock %}
 
 {% block content %}
-<h2>Criteria Page</h2>
 
-<div id="criteriaList"></div>
+<div class="mb-4 slide-in-down">
+  <h1 class="page-title">🎯 Evaluation Criteria</h1>
+  <p class="page-subtitle mb-0">
+    View and manage evaluation criteria
+  </p>
+</div>
+
+<div class="card p-4 p-md-5 slide-in-up">
+  <h4 class="mb-4">📋 All Criteria</h4>
+  <div id="criteriaList" class="list-group list-group-flush"></div>
+</div>
+
 {% endblock %}
 
 {% block scripts %}
+<script src="{% static 'frontend/js/api.js' %}"></script>
 <script src="{% static 'frontend/js/criteria.js' %}"></script>
 {% endblock %}

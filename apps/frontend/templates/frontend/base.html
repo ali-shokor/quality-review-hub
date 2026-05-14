@@ -18,31 +18,37 @@
     <div class="container-fluid">
 
       <a class="navbar-brand fw-bold" href="/dashboard/">
-        Quality Review Hub
+        ✨ Quality Review Hub
       </a>
 
-      <div class="ms-auto d-flex gap-2">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
 
-        <a class="btn btn-outline-light btn-sm" href="/dashboard/">
-          Dashboard
-        </a>
+      <div class="collapse navbar-collapse" id="navbarContent">
+        <div class="ms-auto d-flex gap-2 flex-wrap justify-content-end">
 
-        <a class="btn btn-outline-light btn-sm" href="/projects/">
-          Projects
-        </a>
+          <a class="btn btn-outline-light btn-sm" href="/dashboard/">
+            Dashboard
+          </a>
 
-        <a class="btn btn-outline-light btn-sm" href="/submissions/">
-          Submissions
-        </a>
+          <a class="btn btn-outline-light btn-sm" href="/projects/">
+            Projects
+          </a>
 
-        <a class="btn btn-outline-light btn-sm" href="/reviews/">
-          Reviews
-        </a>
+          <a class="btn btn-outline-light btn-sm" href="/submissions/">
+            Submissions
+          </a>
 
-        <button id="logoutBtn" class="btn btn-warning btn-sm fw-semibold">
-          Logout
-        </button>
+          <a class="btn btn-outline-light btn-sm" href="/reviews/">
+            Reviews
+          </a>
 
+          <button id="logoutBtn" class="btn btn-warning btn-sm fw-semibold">
+            Logout
+          </button>
+
+        </div>
       </div>
     </div>
   </nav>

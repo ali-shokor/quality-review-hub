@@ -5,26 +5,24 @@
 
 {% block content %}
 
-<div class="d-flex justify-content-between align-items-center mb-4">
-  <div>
-    <h1 class="page-title">Submissions</h1>
-    <p class="page-subtitle mb-0">
-      Manage project submissions
-    </p>
-  </div>
+<div class="mb-4 slide-in-down">
+  <h1 class="page-title">📝 Submissions</h1>
+  <p class="page-subtitle mb-0">
+    Create and manage project submissions
+  </p>
 </div>
 
-<div class="card p-4 mb-4">
+<div class="card p-4 p-md-5 mb-4 slide-in-up">
 
-  <h4 class="mb-3">Create Submission</h4>
+  <h4 class="mb-4">➕ Create New Submission</h4>
 
   <form id="submissionForm">
 
     <div class="mb-3">
       <label class="form-label">Project</label>
 
-      <select id="projectSelect" class="form-select" required>
-        <option value="">Choose Project</option>
+      <select id="projectSelect" class="form-select form-select-lg" required>
+        <option value="">— Select a Project —</option>
       </select>
     </div>
 
@@ -34,7 +32,8 @@
       <input
         type="text"
         id="submissionTitle"
-        class="form-control"
+        class="form-control form-control-lg"
+        placeholder="Enter submission title"
         required
       >
     </div>
@@ -46,22 +45,23 @@
         id="submissionContent"
         class="form-control"
         rows="5"
+        placeholder="Write your submission content here..."
         required
       ></textarea>
     </div>
 
-    <button class="btn btn-warning fw-semibold">
+    <button class="btn btn-warning fw-semibold" type="submit">
       Create Submission
     </button>
 
   </form>
 </div>
 
-<div class="card p-4">
+<div class="card p-4 p-md-5 slide-in-up" style="animation-delay: 0.1s;">
 
-  <h4 class="mb-3">All Submissions</h4>
+  <h4 class="mb-4">📚 All Submissions</h4>
 
-  <div id="submissionsList"></div>
+  <div id="submissionsList" class="list-group list-group-flush"></div>
 
 </div>
 

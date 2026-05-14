@@ -5,18 +5,16 @@
 
 {% block content %}
 
-<div class="d-flex justify-content-between align-items-center mb-4">
-  <div>
-    <h1 class="page-title">Projects</h1>
-    <p class="page-subtitle mb-0">
-      Manage evaluation projects
-    </p>
-  </div>
+<div class="mb-4 slide-in-down">
+  <h1 class="page-title">📁 Projects</h1>
+  <p class="page-subtitle mb-0">
+    Manage and organize evaluation projects
+  </p>
 </div>
 
-<div class="card p-4 mb-4">
+<div class="card p-4 p-md-5 mb-4 slide-in-up">
 
-  <h4 class="mb-3">Create Project</h4>
+  <h4 class="mb-4">➕ Create New Project</h4>
 
   <form id="projectForm">
 
@@ -26,7 +24,8 @@
       <input
         type="text"
         id="projectName"
-        class="form-control"
+        class="form-control form-control-lg"
+        placeholder="Enter project name"
         required
       >
     </div>
@@ -38,21 +37,22 @@
         id="projectDescription"
         class="form-control"
         rows="4"
+        placeholder="Describe your project..."
       ></textarea>
     </div>
 
-    <button class="btn btn-warning fw-semibold">
+    <button class="btn btn-warning fw-semibold" type="submit">
       Create Project
     </button>
 
   </form>
 </div>
 
-<div class="card p-4">
+<div class="card p-4 p-md-5 slide-in-up" style="animation-delay: 0.1s;">
 
-  <h4 class="mb-3">All Projects</h4>
+  <h4 class="mb-4">📚 All Projects</h4>
 
-  <div id="projectsList"></div>
+  <div id="projectsList" class="list-group list-group-flush"></div>
 
 </div>
 
